@@ -105,7 +105,7 @@ select_dates_by_offset <- function(dates, window_size, step_size, offset, rollin
   date_intervals$prediction_end[nrow(date_intervals)] <- max(dates)+lubridate::days(step_days)
   # check that always prediction_start = prediction end
   date_intervals <- date_intervals |>
-    dplyr::mutate(prediction_start=as.Date(ifelse(!is.na(dplyr::lag(prediction_end))&prediction_start>=dplyr::lag(prediction_end),dplyr::lag(prediction_end),prediction_start)))
+    dplyr::mutate(prediction_start=as.Date(ifelse(!is.na(dplyr::lag(prediction_end))&prediction_start>=dplyr::lag(prediction_end),dplyr::lag(prediction_end),prediction_start)), origin=.Date(0))
 
   return(date_intervals)
 }
