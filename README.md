@@ -15,7 +15,7 @@ You can install the development version of InvestigatoR from
 
 ``` r
 # install.packages("devtools")
-devtools::install_github("ericschumann12/InvestigatoR")
+devtools::install_github("wol-fi/InvestigatoR")
 ```
 
 ## Basic Workflow
